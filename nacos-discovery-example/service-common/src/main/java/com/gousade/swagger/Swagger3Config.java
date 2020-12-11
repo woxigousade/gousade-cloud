@@ -1,4 +1,4 @@
-package com.gousade.common;
+package com.gousade.swagger;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -37,15 +37,15 @@ public class Swagger3Config {
 
     @Bean
     public Docket publicApi() {
-        return new Docket(DocumentationType.OAS_30)/*.enable(enable)*/.groupName("public").apiInfo(apiInfo()).select()
+        return new Docket(DocumentationType.OAS_30)/*.enable(enable)*/.groupName("developers").apiInfo(apiInfo()).select()
                 .apis(RequestHandlerSelectors.any()).paths(PathSelectors.any()).build();
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfoBuilder().title("GisardAdminLTE - SpringBoot v1.1.2 API")
+        return new ApiInfoBuilder().title("wanbao - SpringCloud v1.1.0 API")
                 .description("Documentation Description")
-                .contact(new Contact("GisardAdminLTE", "https://github.com/woxigousade/gousade", "woxigsd@gmail.com"))
-                .version("v1.1.2").license("MIT License")
+                .contact(new Contact("wanbao - SpringCloud", "https://gitee.com/nbmn/wanbao", "woxigsd@gmail.com"))
+                .version("v1.1.0").license("MIT License")
                 .licenseUrl("https://github.com/woxigousade/gousade/blob/master/LICENSE").build();
     }
 }
